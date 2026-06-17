@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🩺 MediConnect Pro™
+# 🩺 MediGo™
 ### A Full-Stack MERN Enterprise Healthcare Practice & Appointment Management Platform
 
 *Seamless. Secure. Scalable.*
