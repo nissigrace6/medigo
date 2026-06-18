@@ -103,9 +103,8 @@ const runSeeder = async () => {
 
     console.log('Database cleaned. Seeding Super Admins & Admins...');
 
-    // Hash password helper
-    const salt = await bcrypt.genSalt(10);
-    const defaultPassword = await bcrypt.hash('Admin@123', salt);
+    // Raw password for seeded users. The User model pre('save') hook will hash it automatically.
+    const defaultPassword = 'Admin@123';
 
     // 1. Super Admin
     const superAdminUser = await User.create({

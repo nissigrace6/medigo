@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext.jsx';
+import { useNavigate } from 'react-router-dom';
 import Sidebar from '../layouts/Sidebar.jsx';
 import api from '../services/api.js';
 import AppointmentTimeline from '../components/AppointmentTimeline.jsx';
@@ -24,6 +25,7 @@ import {
 
 const PatientDashboard = () => {
   const { user, updateProfile } = useAuth();
+  const navigate = useNavigate();
   const [currentTab, setCurrentTab] = useState('appointments');
 
   // Shared state
@@ -614,7 +616,7 @@ const PatientDashboard = () => {
                           <p className="text-[10px] text-slate-400 mt-1">{doc.hospitalName}</p>
                         </div>
                         <button
-                          onClick={() => (window.location.href = `/doctors/${doc._id}`)}
+                          onClick={() => navigate(`/doctors/${doc._id}`)}
                           className="w-full py-2 bg-[#2563EB] hover:bg-blue-600 text-white text-xs font-bold rounded-xl transition shadow-md shadow-blue-500/10"
                         >
                           Book Consult
